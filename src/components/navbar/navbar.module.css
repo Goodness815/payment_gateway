@@ -31,12 +31,12 @@
   font-weight: 400;
   border-radius: 8px;
   cursor: pointer;
+  padding: 0px 40px;
 }
 .nav_flex button:first-of-type {
   background-color: transparent;
   color: black;
   border: 1px solid black;
-  padding: 0px 40px;
 }
 .nav_flex button:first-of-type a {
   color: black;
@@ -44,8 +44,15 @@
 .nav_flex button:last-of-type {
   background-color: #ff3f3f;
   color: white;
-  padding: 0px 40px;
 }
 .nav_flex button:last-of-type a {
   color: white;
+}
+@media screen and (max-width: 500px) {
+  .navbar_inner span {
+    font-size: 25px;
+  }
+  .nav_flex button {
+    padding: 0px 20px;
+  }
 }

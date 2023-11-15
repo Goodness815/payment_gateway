@@ -44,11 +44,10 @@
   font-weight: 400;
   border-radius: 8px;
   cursor: pointer;
+  padding: 0px 40px;
 }
 .home_button_flex button:first-of-type {
   background-color: #ff3f3f;
-
-  padding: 0px 40px;
 }
 .home_button_flex button:first-of-type a {
   color: white;
@@ -57,8 +56,63 @@
   background-color: transparent;
   color: black;
   border: 1px solid black;
-  padding: 0px 40px;
 }
 .home_right img {
   width: 600px;
+}
+
+@media screen and (max-width: 1190px) {
+  .home_inner {
+    flex-direction: column;
+    padding: 150px 0px;
+  }
+  .home_left {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+  }
+  .home_right {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+    max-width: 90%;
+  }
+  .home_button_flex {
+    justify-content: center;
+  }
+
+  .home_right img {
+    width: 80%;
+  }
+  .home_inner h2 {
+    font-size: 35px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 50px; /* 116.667% */
+  }
+  .home_inner p {
+    font-size: 18px;
+  }
+  .home_button_flex button {
+    padding: 0px 20px;
+    font-size: 13px;
+  }
+}
+@media screen and (max-width: 450px) {
+  .home_inner {
+    padding: 70px 0px;
+  }
+  .home_button_flex {
+    margin-top: 20px;
+  }
+  .home_button_flex button {
+    padding: 0px 14px;
+  }
+  .home_inner h2 {
+    font-size: 28px;
+    line-height: 40px; /* 116.667% */
+  }
 }

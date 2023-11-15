@@ -47,3 +47,15 @@
   cursor: pointer;
   background-color: rgb(185, 73, 73);
 }
+@media screen and (max-width: 450px) {
+  .auth_container form {
+    padding: 25px;
+    margin-top: 20px;
+  }
+  .auth_container form input {
+    width: 250px;
+  }
+  .auth_container form button {
+    width: 250px;
+  }
+}
