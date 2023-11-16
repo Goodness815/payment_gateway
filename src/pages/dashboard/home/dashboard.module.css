@@ -1,0 +1,102 @@
+.dashboard_container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  min-height: 70vh;
+}
+.balance_card_flex {
+  padding: 30px 0px;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  width: 100%;
+}
+.balance_card_item {
+  height: 200px;
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  border-radius: 10px;
+  background-color: black;
+
+  /* background: linear-gradient(to bottom, #fb651e, black); */
+  color: white;
+}
+.balance_card_item:last-of-type {
+  background-color: white;
+  border: 1px solid black;
+  color: black;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.balance_card_item span {
+  font-size: 30px;
+  font-weight: 500;
+  font-family: var(--font);
+  margin-bottom: 10px;
+}
+
+.dashboard_container h3 {
+  text-align: center;
+  margin-top: 60px;
+  font-weight: 500;
+  font-family: var(--font);
+}
+.transactions_table {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+.transactions_table .header {
+  padding: 15px 20px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fb651e;
+  color: white;
+  margin-top: 20px;
+}
+.transactions_table span {
+  width: 25%;
+  text-align: center;
+}
+.transactions_table .content {
+  padding: 20px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.112);
+  color: black;
+}
+
+.create_payment form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 30px;
+}
+.create_payment form input {
+  width: 100%;
+  height: 40px;
+  margin-top: 15px;
+  padding: 20px;
+  border-radius: 5px;
+  border: none;
+  border: 1px solid #fb651e;
+}
+.create_payment form button {
+  width: 100%;
+  height: 40px;
+  margin: 25px 0px;
+  background-color: #fb651e;
+  color: white;
+  border: none;
+  cursor: pointer;
+}

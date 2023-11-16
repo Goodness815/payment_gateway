@@ -4,7 +4,7 @@
   flex-direction: column;
   justify-content: center;
   min-height: 100vh;
-  background-color: rgb(185, 73, 73);
+  background-color: #fb651e;
 }
 .auth_container span {
   font-family: var(--font);
@@ -45,7 +45,7 @@
   color: white;
   margin-top: 15px;
   cursor: pointer;
-  background-color: rgb(185, 73, 73);
+  background-color: #fb651e;
 }
 @media screen and (max-width: 450px) {
   .auth_container form {

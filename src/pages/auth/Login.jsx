@@ -1,20 +1,35 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import styles from "./auth.module.css";
+import { toast } from "react-toast";
+import axios from "axios";
 
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loader, setLoader] = useState(false);
+  const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setLoader(true);
-    setTimeout(() => {
+    try {
+      const res = await axios.post(
+        `${import.meta.env.VITE_APP_BASE_URL}/auth/login`,
+        { email, password }
+      );
       setLoader(false);
-      setEmail("");
-      setPassword("");
-    }, 4000);
+      if (res.data.success) {
+        localStorage.setItem("userData", JSON.stringify(res.data.data));
+        toast.success(`Welcome ${res.data.data.name}.`);
+        navigate("/dashboard/home");
+      } else {
+        toast.warn(res.data.message);
+      }
+    } catch (error) {
+      setLoader(false);
+      toast.error(error.message);
+    }
   };
 
   return (
