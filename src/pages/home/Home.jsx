@@ -17,7 +17,9 @@ function Home() {
               <button>
                 <Link to="/signup">Start Now</Link>
               </button>
-              <button>Read the developer docs</button>
+              <button>
+                <Link to="/documentation">Read the developer docs</Link>
+              </button>
             </div>
           </div>
           <div className={styles.home_right}>

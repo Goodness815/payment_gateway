@@ -100,3 +100,30 @@
   border: none;
   cursor: pointer;
 }
+
+@media screen and (max-width: 1165px) {
+  .balance_card_flex {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .balance_card_item {
+    width: 90%;
+  }
+}
+@media screen and (max-width: 600px) {
+  .balance_card_item {
+    width: 100%;
+  }
+  .dashboard_container h3 {
+    margin-top: 10px;
+  }
+  .remove {
+    display: none;
+  }
+  .transactions_table .header {
+    justify-content: space-evenly;
+  }
+  .transactions_table span {
+    width: 33.5%;
+  }
+}

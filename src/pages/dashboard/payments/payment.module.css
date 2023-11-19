@@ -101,12 +101,12 @@
   cursor: pointer;
 }
 
-h2,
-h3,
-h4,
-h5,
-div,
-button {
+.payment_modal_container h2,
+.payment_modal_container h3,
+.payment_modal_container h4,
+.payment_modal_container h5,
+.payment_modal_container div,
+.payment_modal_container button {
   font-family: cursive;
 }
 
@@ -123,6 +123,9 @@ button {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+}
+.payment_inner h2 {
+  text-align: center;
 }
 .payment_main {
   color: black;
@@ -194,6 +197,25 @@ button {
   margin-top: 20px;
   cursor: pointer;
 }
+.payment_table_item {
+  width: 100%;
+  border: 1px solid black;
+  padding: 20px;
+  border-radius: 8px;
+  display: none;
+}
+.payment_table_item h5 {
+  margin: 5px 0px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.216);
+  padding: 10px;
+  border-radius: 8px;
+}
+.payment_table_item h4 {
+  margin: 5px 0px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.216);
+  padding: 10px;
+  border-radius: 8px;
+}
 .test_payment_div {
   display: flex;
   align-items: center;
@@ -244,5 +266,23 @@ button {
   }
   100% {
     opacity: 0.2;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .content {
+    display: none !important;
+  }
+  .header {
+    display: none !important;
+  }
+  .payment_table_item {
+    display: block;
+    margin-top: 20px;
+  }
+}
+@media screen and (max-width: 500px) {
+  .payment_inner {
+    width: 90%;
   }
 }

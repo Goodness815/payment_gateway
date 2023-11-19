@@ -1,9 +1,19 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import styles from "./sidebar.module.css";
+import { IoMdClose } from "react-icons/io";
 
-function Sidebar() {
+function Sidebar({ navState, setNavState }) {
+  const navigate = useNavigate();
   return (
-    <div className={styles.sidebar_container}>
+    <div
+      className={`${styles.sidebar_container} ${
+        navState ? styles.navbar_open : ""
+      }`}
+    >
+      <IoMdClose
+        onClick={() => setNavState(false)}
+        className={styles.sidebar_close}
+      />
       <div className={styles.sidebar_inner}>
         <ul>
           <Link to="/dashboard/home">
@@ -16,6 +26,15 @@ function Sidebar() {
           <Link to="/dashboard/withdraw">
             <li>Withdrawal</li>
           </Link>
+
+          <li
+            onClick={() => {
+              localStorage.clear();
+              navigate("/login");
+            }}
+          >
+            Logout
+          </li>
         </ul>
       </div>
     </div>

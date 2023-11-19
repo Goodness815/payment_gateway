@@ -117,7 +117,7 @@ function Dashboard() {
                 <span>ID</span>
                 <span>Amount</span>
                 <span>Status</span>
-                <span>Date</span>
+                <span className={styles.remove}>Date</span>
               </div>
               {tableData.length > 0 ? (
                 <>
@@ -127,7 +127,7 @@ function Dashboard() {
                         <span>{item.payment_id}</span>
                         <span>{item.amount}</span>
                         <span>{item.payment_status}</span>
-                        <span>{item.date}</span>
+                        <span className={styles.remove}>{item.date}</span>
                       </div>
                     );
                   })}

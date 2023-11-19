@@ -1,6 +1,7 @@
 import styles from "./topbar.module.css";
+import { FaBarsStaggered } from "react-icons/fa6";
 
-function Topbar() {
+function Topbar({ setNavState }) {
   const userData = JSON.parse(localStorage.getItem("userData"));
   function getFirstName(fullName) {
     // Split the full name into an array of words
@@ -12,7 +13,15 @@ function Topbar() {
   return (
     <div className={styles.topbar_container}>
       <h2>
-        Welcome, <span>{getFirstName(userData.name)}</span>
+        <span>
+          <FaBarsStaggered
+            onClick={() => setNavState(true)}
+            className={styles.nav_hamburger}
+          />
+        </span>{" "}
+        <div>
+          Welcome, <span>{getFirstName(userData.name)}</span>
+        </div>
       </h2>
       <div className={styles.right}>
         <div className={styles.text_case}>

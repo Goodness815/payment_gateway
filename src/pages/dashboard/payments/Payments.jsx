@@ -89,9 +89,28 @@ function Dashboard() {
                       </div>
                     );
                   })}
+                  {tableData.map((item, i) => {
+                    const date = new Date(item.date);
+                    return (
+                      <div key={i} className={styles.payment_table_item}>
+                        <h5>ID: {item.payment_id}</h5>
+                        <h5>
+                          Amount: {parseInt(item.amount).toLocaleString()}
+                        </h5>
+                        <h4
+                          style={{ cursor: "pointer" }}
+                          onClick={() => copyToClipboard(item.payment_link)}
+                        >
+                          Payment Link: {item.payment_link}
+                        </h4>
+                        <h5>Status: {item.payment_status}</h5>
+                        <h5>Date: {date.toLocaleString("en-US")}</h5>
+                      </div>
+                    );
+                  })}
                 </>
               ) : (
-                <div className={styles.content}>
+                <div style={{ marginTop: "20px" }}>
                   <span>No Active Payment</span>
                 </div>
               )}

@@ -8,6 +8,7 @@ import Dashboard from "./pages/dashboard/home/Dashboard";
 import Payments from "./pages/dashboard/payments/Payments";
 import PaymentModal from "./pages/dashboard/payments/PaymentModal";
 import Withdraw from "./pages/dashboard/withdraw/Withdraw";
+import Docs from "./pages/docs/Docs";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
+        <Route path="/documentation" element={<Docs />} />
         <Route path="/dashboard/home" element={<Dashboard />} />
         <Route path="/dashboard/payments" element={<Payments />} />
         <Route path="/dashboard/withdraw" element={<Withdraw />} />

@@ -14,6 +14,7 @@ function PaymentModal() {
   const [status, setStatus] = useState(0);
   const [modalLoader, setModalLoader] = useState(false);
   const [modalSuccess, setModalSuccess] = useState(false);
+  const [modalError, setModalError] = useState("");
   const amount = parseInt(paymentData.amount || "").toLocaleString();
   // Use the useLocation hook to get the location object, including search (query parameters)
   const location = useLocation();
@@ -53,7 +54,13 @@ function PaymentModal() {
       );
       setModalLoader(false);
       if (res.data.success) {
-        setModalSuccess(true);
+        if (status === 1) {
+          setModalSuccess(true);
+        } else if (status === 2) {
+          setModalError(`Your payment is processing`);
+        } else {
+          setModalError(`Your payment of ${amount} failed`);
+        }
       } else {
         setError(res.data.message);
       }
@@ -95,9 +102,30 @@ function PaymentModal() {
               Congratulations!
             </h3>
             <h4 style={{ textAlign: "center", paddingBottom: "20px" }}>
-              Your payment of {amount} to {paymentData.recipientEmail} was
-              successfull!
+              Your payment of {amount} was successfull!
             </h4>
+          </div>
+          <span>
+            <FaLock /> Secured by PayGate
+          </span>
+        </div>
+      </div>
+    );
+  }
+  if (modalError) {
+    return (
+      <div className={styles.payment_modal_container}>
+        <div className={styles.payment_inner}>
+          <div className={styles.payment_main}>
+            <h3
+              style={{
+                textAlign: "center",
+                paddingTop: "20px",
+                paddingBottom: "10px",
+              }}
+            >
+              {modalError}!
+            </h3>
           </div>
           <span>
             <FaLock /> Secured by PayGate
